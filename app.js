@@ -14,7 +14,7 @@ var app = express();
 require("./config/database")
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views/dist'));
+app.set('views', path.join(__dirname, 'views/dist/Cars'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -23,7 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'view/dist')));
+app.use(express.static(path.join(__dirname, 'views/dist/Cars')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
